@@ -167,10 +167,11 @@ main {
 }
 
 .hero-logo img {
-  max-width: min(90vw, 480px);
+  max-width: min(95vw, 720px);
   height: auto;
   margin: 0 auto;
-  filter: drop-shadow(0 4px 24px var(--nectar-glow)) drop-shadow(0 0 40px rgba(240, 168, 192, 0.15));
+  opacity: 0.72;
+  filter: drop-shadow(0 4px 20px var(--nectar-glow)) drop-shadow(0 0 50px rgba(240, 168, 192, 0.12));
 }
 
 .hero .tagline {
