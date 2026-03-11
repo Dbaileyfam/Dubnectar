@@ -1,17 +1,28 @@
-/* Dubnectar — Band site styles */
+/* Dubnectar — Band site styles (logo aesthetic) */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --bg-dark: #0d0b0a;
-  --bg-card: #161210;
-  --surface: #1e1a18;
-  --nectar: #e8a838;
-  --nectar-dim: #c4922e;
-  --nectar-glow: rgba(232, 168, 56, 0.25);
+  /* Logo palette: black, bubblegum pink, honey gold, forest green */
+  --black: #000000;
+  --bg-dark: #0a0a0a;
+  --bg-card: #111111;
+  --surface: #1a1a1a;
+  --pink: #f0a8c0;
+  --pink-soft: #e8c8d8;
+  --gold: #e8b838;
+  --gold-dim: #d4a020;
+  --green: #1e4620;
+  --green-light: #3d6b35;
+  --green-glow: rgba(45, 90, 39, 0.35);
+  --nectar: var(--gold);
+  --nectar-dim: var(--gold-dim);
+  --nectar-glow: rgba(232, 184, 56, 0.3);
+  --outline: rgba(255, 255, 255, 0.15);
+  --outline-strong: rgba(255, 255, 255, 0.35);
   --text: #f5f0eb;
-  --text-muted: #9a9188;
+  --text-muted: #b0a098;
   --border: #2a2522;
-  --radius: 12px;
+  --radius: 14px;
   --font-display: 'Bebas Neue', sans-serif;
   --font-body: 'Outfit', sans-serif;
 }
@@ -29,24 +40,25 @@ html {
 body {
   margin: 0;
   font-family: var(--font-body);
-  background: var(--bg-dark);
+  background: var(--black);
   color: var(--text);
   line-height: 1.6;
   min-height: 100vh;
   background-image:
-    radial-gradient(ellipse 80% 50% at 50% -20%, var(--nectar-glow), transparent),
-    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(232, 168, 56, 0.08), transparent);
+    radial-gradient(ellipse 100% 60% at 50% -10%, var(--nectar-glow), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 90% 80%, var(--green-glow), transparent 50%),
+    radial-gradient(ellipse 50% 40% at 10% 60%, rgba(240, 168, 192, 0.08), transparent 45%);
 }
 
 a {
-  color: var(--nectar);
+  color: var(--gold);
   text-decoration: none;
   transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 a:hover {
-  color: var(--nectar-dim);
-  opacity: 0.9;
+  color: var(--pink);
+  opacity: 0.95;
 }
 
 img {
@@ -60,9 +72,9 @@ img {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(13, 11, 10, 0.9);
+  background: rgba(0, 0, 0, 0.92);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid var(--outline);
 }
 
 .site-header .inner {
@@ -77,18 +89,21 @@ img {
 }
 
 .logo {
-  font-family: var(--font-display);
-  font-size: 1.75rem;
-  letter-spacing: 0.05em;
-  color: var(--text);
+  display: block;
+  line-height: 0;
 }
 
-.logo a {
-  color: inherit;
+.logo img {
+  height: 48px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px var(--nectar-glow));
+  transition: filter 0.2s ease;
 }
 
-.logo a:hover {
-  color: var(--nectar);
+.logo:hover img {
+  filter: drop-shadow(0 0 12px var(--nectar-glow)) drop-shadow(0 0 4px rgba(240, 168, 192, 0.3));
 }
 
 .nav-list {
@@ -111,8 +126,9 @@ img {
 
 .nav-list a:hover,
 .nav-list a[aria-current="page"] {
-  color: var(--nectar);
-  background: rgba(232, 168, 56, 0.1);
+  color: var(--pink);
+  background: rgba(240, 168, 192, 0.12);
+  border: 1px solid var(--outline);
 }
 
 /* Main content */
@@ -128,6 +144,7 @@ main {
   letter-spacing: 0.02em;
   margin: 0 0 0.5rem;
   color: var(--text);
+  text-shadow: 0 0 24px var(--nectar-glow);
 }
 
 .page-subtitle {
@@ -140,17 +157,20 @@ main {
 /* Hero (homepage) */
 .hero {
   text-align: center;
-  padding: 4rem 1rem 5rem;
+  padding: 3rem 1rem 5rem;
   position: relative;
 }
 
-.hero h1 {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 12vw, 6rem);
-  letter-spacing: 0.08em;
+.hero-logo {
   margin: 0 0 0.5rem;
-  color: var(--text);
-  text-transform: uppercase;
+  line-height: 0;
+}
+
+.hero-logo img {
+  max-width: min(90vw, 480px);
+  height: auto;
+  margin: 0 auto;
+  filter: drop-shadow(0 4px 24px var(--nectar-glow)) drop-shadow(0 0 40px rgba(240, 168, 192, 0.15));
 }
 
 .hero .tagline {
@@ -181,24 +201,28 @@ main {
 }
 
 .btn-primary {
-  background: var(--nectar);
-  color: var(--bg-dark);
+  background: var(--gold);
+  color: var(--black);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 12px var(--nectar-glow);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px var(--nectar-glow);
+  box-shadow: 0 6px 20px var(--nectar-glow), 0 0 8px rgba(240, 168, 192, 0.2);
+  background: var(--gold-dim);
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--nectar);
-  border: 2px solid var(--nectar);
+  color: var(--pink);
+  border: 2px solid var(--pink);
 }
 
 .btn-secondary:hover {
-  background: rgba(232, 168, 56, 0.1);
+  background: rgba(240, 168, 192, 0.15);
   transform: translateY(-2px);
+  box-shadow: 0 0 16px rgba(240, 168, 192, 0.25);
 }
 
 /* Section blocks */
@@ -212,6 +236,7 @@ main {
   letter-spacing: 0.03em;
   margin: 0 0 1.5rem;
   color: var(--text);
+  text-shadow: 0 0 20px var(--nectar-glow);
 }
 
 /* Cards grid */
@@ -223,15 +248,16 @@ main {
 
 .card {
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 2px solid var(--outline);
   border-radius: var(--radius);
   overflow: hidden;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-  border-color: var(--nectar-dim);
+  border-color: var(--green-light);
   transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--green-glow), 0 0 0 1px var(--gold) inset;
 }
 
 .card-image {
@@ -249,6 +275,7 @@ main {
   font-size: 1.35rem;
   margin: 0 0 0.35rem;
   letter-spacing: 0.02em;
+  color: var(--gold);
 }
 
 .card-meta {
@@ -278,14 +305,15 @@ main {
   align-items: center;
   padding: 1.5rem;
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 2px solid var(--outline);
   border-radius: var(--radius);
   margin-bottom: 1rem;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .event-item:hover {
-  border-color: var(--nectar-dim);
+  border-color: var(--green-light);
+  box-shadow: 0 4px 16px var(--green-glow);
 }
 
 .event-date {
@@ -298,7 +326,7 @@ main {
   font-family: var(--font-display);
   font-size: 2rem;
   line-height: 1;
-  color: var(--nectar);
+  color: var(--gold);
 }
 
 .event-date .month {
@@ -332,14 +360,15 @@ main {
 
 .media-card {
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 2px solid var(--outline);
   border-radius: var(--radius);
   overflow: hidden;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .media-card:hover {
-  border-color: var(--nectar-dim);
+  border-color: var(--pink);
+  box-shadow: 0 4px 20px rgba(240, 168, 192, 0.2);
 }
 
 .media-card .thumb {
@@ -406,7 +435,8 @@ main {
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--nectar);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px var(--nectar-glow);
 }
 
 .form-group textarea {
@@ -432,14 +462,18 @@ main {
 }
 
 .contact-info a {
-  color: var(--nectar);
+  color: var(--gold);
+}
+
+.contact-info a:hover {
+  color: var(--pink);
 }
 
 /* Footer */
 .site-footer {
   margin-top: 4rem;
   padding: 2rem 1.5rem;
-  border-top: 1px solid var(--border);
+  border-top: 2px solid var(--outline);
   text-align: center;
   color: var(--text-muted);
   font-size: 0.9rem;
