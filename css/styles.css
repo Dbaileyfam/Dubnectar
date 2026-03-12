@@ -93,6 +93,7 @@ img {
   line-height: 0;
 }
 
+/* Blend wrapper: any black in the logo merges with page background so no visible rectangle */
 .logo-blend {
   display: inline-block;
   line-height: 0;
@@ -172,6 +173,7 @@ main {
   line-height: 0;
 }
 
+/* Blend wrapper: prevents logo from ever showing a black background */
 .hero-logo-blend {
   display: inline-block;
   line-height: 0;
