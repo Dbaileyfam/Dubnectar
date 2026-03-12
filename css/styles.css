@@ -144,12 +144,12 @@ img {
   width: auto;
   max-width: 160px;
   object-fit: contain;
-  filter: drop-shadow(0 0 8px var(--nectar-glow));
+  filter: saturate(1.75) contrast(1.2) brightness(1.05) drop-shadow(0 0 8px var(--nectar-glow));
   transition: filter 0.2s ease;
 }
 
 .logo:hover img {
-  filter: drop-shadow(0 0 12px var(--nectar-glow));
+  filter: saturate(1.9) contrast(1.22) brightness(1.08) drop-shadow(0 0 12px var(--nectar-glow));
 }
 
 .nav-list {
@@ -228,7 +228,7 @@ main {
   margin: 0 auto;
   display: block;
   opacity: 0.72;
-  filter: drop-shadow(0 4px 20px var(--nectar-glow)) drop-shadow(0 0 50px rgba(240, 168, 192, 0.12));
+  filter: saturate(1.8) contrast(1.2) brightness(1.06) drop-shadow(0 4px 20px var(--nectar-glow)) drop-shadow(0 0 50px rgba(240, 168, 192, 0.12));
 }
 
 .hero .tagline {
