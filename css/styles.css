@@ -98,6 +98,7 @@ img {
   width: auto;
   max-width: 160px;
   object-fit: contain;
+  mix-blend-mode: screen;
   filter: drop-shadow(0 0 8px var(--nectar-glow));
   transition: filter 0.2s ease;
 }
@@ -171,6 +172,7 @@ main {
   height: auto;
   margin: 0 auto;
   opacity: 0.72;
+  mix-blend-mode: screen;
   filter: drop-shadow(0 4px 20px var(--nectar-glow)) drop-shadow(0 0 50px rgba(240, 168, 192, 0.12));
 }
 
