@@ -51,13 +51,14 @@ body {
   position: relative;
 }
 
-/* Interactive yellow smoke background – drifting wisps */
+/* Interactive yellow smoke background – drifting wisps (stays behind content) */
 .smoke-layer {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
+  visibility: visible;
 }
 
 .smoke-blob {
@@ -182,13 +183,14 @@ img {
   border: 1px solid var(--outline);
 }
 
-/* Main content */
+/* Main content – transparent so smoke shows through */
 main {
   position: relative;
   z-index: 1;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1.5rem 4rem;
+  background: transparent;
 }
 
 .page-title {
@@ -211,7 +213,6 @@ main {
 .hero {
   position: relative;
   z-index: 5;
-  isolation: isolate;
   text-align: center;
   padding: 3rem 1rem 5rem;
 }
@@ -222,15 +223,17 @@ main {
   line-height: 0;
 }
 
-/* Dark backing so smoke doesn’t show through and dull the logo */
+/* Small black backing only behind the logo so smoke doesn’t dull it; smoke stays visible everywhere else */
 .hero-logo::before {
   content: '';
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 140%;
-  height: 140%;
+  width: 110%;
+  height: 110%;
+  min-width: 200px;
+  min-height: 80px;
   background: var(--black);
   z-index: -1;
 }
