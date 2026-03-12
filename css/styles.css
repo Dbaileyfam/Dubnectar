@@ -65,12 +65,12 @@ body {
   border-radius: 50%;
   background: radial-gradient(
     ellipse 85% 25% at 50% 50%,
-    rgba(232, 184, 56, 0.42),
-    rgba(232, 168, 56, 0.26) 45%,
-    rgba(210, 160, 40, 0.1) 70%,
+    rgba(232, 184, 56, 0.58),
+    rgba(232, 168, 56, 0.38) 45%,
+    rgba(210, 160, 40, 0.16) 70%,
     transparent
   );
-  filter: blur(48px);
+  filter: blur(40px);
   transform: translate(-50%, -50%);
   will-change: transform;
   animation: smoke-drift 25s ease-in-out infinite;
