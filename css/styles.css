@@ -65,22 +65,27 @@ body {
   border-radius: 50%;
   background: radial-gradient(
     ellipse 85% 25% at 50% 50%,
-    rgba(232, 184, 56, 0.58),
-    rgba(232, 168, 56, 0.38) 45%,
-    rgba(210, 160, 40, 0.16) 70%,
+    rgba(232, 184, 56, 0.62),
+    rgba(232, 168, 56, 0.42) 45%,
+    rgba(210, 160, 40, 0.2) 70%,
     transparent
   );
-  filter: blur(40px);
+  filter: blur(38px);
   transform: translate(-50%, -50%);
   will-change: transform;
   animation: smoke-drift 25s ease-in-out infinite;
 }
 
-.smoke-blob[data-blob="0"] { width: 72vmax; height: 14vmax; left: 15%; top: 25%; animation-delay: 0s; }
-.smoke-blob[data-blob="1"] { width: 55vmax; height: 12vmax; left: 65%; top: 45%; animation-delay: -5s; }
-.smoke-blob[data-blob="2"] { width: 60vmax; height: 16vmax; left: 40%; top: 70%; animation-delay: -10s; }
-.smoke-blob[data-blob="3"] { width: 48vmax; height: 10vmax; left: 80%; top: 20%; animation-delay: -2s; }
-.smoke-blob[data-blob="4"] { width: 52vmax; height: 14vmax; left: 10%; top: 60%; animation-delay: -15s; }
+.smoke-blob[data-blob="0"]  { width: 78vmax; height: 16vmax; left: 15%; top: 20%; animation-delay: 0s; }
+.smoke-blob[data-blob="1"]  { width: 62vmax; height: 14vmax; left: 68%; top: 42%; animation-delay: -5s; }
+.smoke-blob[data-blob="2"]  { width: 70vmax; height: 18vmax; left: 38%; top: 72%; animation-delay: -10s; }
+.smoke-blob[data-blob="3"]  { width: 55vmax; height: 12vmax; left: 82%; top: 18%; animation-delay: -2s; }
+.smoke-blob[data-blob="4"]  { width: 58vmax; height: 15vmax; left: 8%; top: 58%; animation-delay: -15s; }
+.smoke-blob[data-blob="5"]  { width: 65vmax; height: 14vmax; left: 50%; top: 35%; animation-delay: -7s; }
+.smoke-blob[data-blob="6"]  { width: 72vmax; height: 16vmax; left: 25%; top: 55%; animation-delay: -12s; }
+.smoke-blob[data-blob="7"]  { width: 60vmax; height: 13vmax; left: 75%; top: 65%; animation-delay: -3s; }
+.smoke-blob[data-blob="8"]  { width: 68vmax; height: 15vmax; left: 42%; top: 12%; animation-delay: -8s; }
+.smoke-blob[data-blob="9"]  { width: 56vmax; height: 12vmax; left: 88%; top: 48%; animation-delay: -4s; }
 
 @keyframes smoke-drift {
   0%, 100% { opacity: 0.9; }
