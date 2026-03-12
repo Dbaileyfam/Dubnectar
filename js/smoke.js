@@ -9,7 +9,7 @@
 
   var mouse = { x: 0.5, y: 0.5 };
   var target = { x: 0.5, y: 0.5 };
-  var raf = 0;
+  var start = Date.now();
 
   function onMove(e) {
     target.x = e.clientX / window.innerWidth;
@@ -24,24 +24,29 @@
   }
 
   function animate() {
-    mouse.x += (target.x - mouse.x) * 0.04;
-    mouse.y += (target.y - mouse.y) * 0.04;
+    var t = (Date.now() - start) / 1000;
+    mouse.x += (target.x - mouse.x) * 0.03;
+    mouse.y += (target.y - mouse.y) * 0.03;
 
     blobs.forEach(function (blob, i) {
-      var pull = 0.12 + (i % 3) * 0.04;
-      var offsetX = (mouse.x - 0.5) * 25 * (i + 1);
-      var offsetY = (mouse.y - 0.5) * 25 * (i + 1);
-      var x = parseFloat(blob.dataset.x || 0) + (offsetX - parseFloat(blob.dataset.x || 0)) * pull;
-      var y = parseFloat(blob.dataset.y || 0) + (offsetY - parseFloat(blob.dataset.y || 0)) * pull;
+      var pull = 0.08 + (i % 4) * 0.02;
+      var mouseX = (mouse.x - 0.5) * 35 * (i * 0.7 + 1);
+      var mouseY = (mouse.y - 0.5) * 35 * (i * 0.7 + 1);
+      var driftX = Math.sin(t * 0.15 + i * 1.2) * 12 + Math.sin(t * 0.08 + i) * 8;
+      var driftY = Math.cos(t * 0.12 + i * 0.9) * 10 + Math.cos(t * 0.1 + i * 1.5) * 6;
+      var baseRot = parseFloat(blob.dataset.rotation || 0);
+      var rot = baseRot + Math.sin(t * 0.07 + i) * 3;
+      var x = parseFloat(blob.dataset.x || 0) + (mouseX + driftX - parseFloat(blob.dataset.x || 0)) * pull;
+      var y = parseFloat(blob.dataset.y || 0) + (mouseY + driftY - parseFloat(blob.dataset.y || 0)) * pull;
       blob.dataset.x = x;
       blob.dataset.y = y;
-      blob.style.transform = 'translate(calc(-50% + ' + x + 'px), calc(-50% + ' + y + 'px))';
+      blob.style.transform = 'translate(calc(-50% + ' + x + 'px), calc(-50% + ' + y + 'px)) rotate(' + rot + 'deg)';
     });
 
-    raf = requestAnimationFrame(animate);
+    requestAnimationFrame(animate);
   }
 
   window.addEventListener('mousemove', onMove, { passive: true });
   window.addEventListener('touchmove', onTouch, { passive: true });
-  raf = requestAnimationFrame(animate);
+  requestAnimationFrame(animate);
 })();

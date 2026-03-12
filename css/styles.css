@@ -51,7 +51,7 @@ body {
   position: relative;
 }
 
-/* Interactive yellow smoke background */
+/* Interactive yellow smoke background – drifting wisps */
 .smoke-layer {
   position: fixed;
   inset: 0;
@@ -61,28 +61,31 @@ body {
 }
 
 .smoke-blob {
-  --size:  min(80vmax, 420px);
   position: absolute;
-  width: var(--size);
-  height: var(--size);
   border-radius: 50%;
   background: radial-gradient(
-    circle at 30% 30%,
-    rgba(232, 184, 56, 0.35),
-    rgba(232, 168, 56, 0.2) 40%,
-    rgba(210, 160, 40, 0.08) 70%,
+    ellipse 80% 30% at 50% 50%,
+    rgba(232, 184, 56, 0.28),
+    rgba(232, 168, 56, 0.14) 50%,
+    rgba(210, 160, 40, 0.06) 75%,
     transparent
   );
-  filter: blur(40px);
+  filter: blur(56px);
   transform: translate(-50%, -50%);
   will-change: transform;
+  animation: smoke-drift 25s ease-in-out infinite;
 }
 
-.smoke-blob[data-blob="0"] { --size: min(70vmax, 380px); left: 20%; top: 30%; }
-.smoke-blob[data-blob="1"] { --size: min(55vmax, 320px); left: 70%; top: 50%; }
-.smoke-blob[data-blob="2"] { --size: min(60vmax, 300px); left: 50%; top: 70%; }
-.smoke-blob[data-blob="3"] { --size: min(45vmax, 260px); left: 85%; top: 25%; }
-.smoke-blob[data-blob="4"] { --size: min(50vmax, 280px); left: 15%; top: 65%; }
+.smoke-blob[data-blob="0"] { width: 72vmax; height: 14vmax; left: 15%; top: 25%; animation-delay: 0s; }
+.smoke-blob[data-blob="1"] { width: 55vmax; height: 12vmax; left: 65%; top: 45%; animation-delay: -5s; }
+.smoke-blob[data-blob="2"] { width: 60vmax; height: 16vmax; left: 40%; top: 70%; animation-delay: -10s; }
+.smoke-blob[data-blob="3"] { width: 48vmax; height: 10vmax; left: 80%; top: 20%; animation-delay: -2s; }
+.smoke-blob[data-blob="4"] { width: 52vmax; height: 14vmax; left: 10%; top: 60%; animation-delay: -15s; }
+
+@keyframes smoke-drift {
+  0%, 100% { opacity: 0.82; }
+  50%      { opacity: 1; }
+}
 
 a {
   color: var(--gold);
