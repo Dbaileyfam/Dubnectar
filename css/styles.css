@@ -93,12 +93,17 @@ img {
   line-height: 0;
 }
 
+.logo-blend {
+  display: inline-block;
+  line-height: 0;
+  mix-blend-mode: screen;
+}
+
 .logo img {
   height: 48px;
   width: auto;
   max-width: 160px;
   object-fit: contain;
-  mix-blend-mode: screen;
   filter: drop-shadow(0 0 8px var(--nectar-glow));
   transition: filter 0.2s ease;
 }
@@ -167,12 +172,18 @@ main {
   line-height: 0;
 }
 
+.hero-logo-blend {
+  display: inline-block;
+  line-height: 0;
+  mix-blend-mode: screen;
+}
+
 .hero-logo img {
   max-width: min(95vw, 720px);
   height: auto;
   margin: 0 auto;
+  display: block;
   opacity: 0.72;
-  mix-blend-mode: screen;
   filter: drop-shadow(0 4px 20px var(--nectar-glow)) drop-shadow(0 0 50px rgba(240, 168, 192, 0.12));
 }
 
