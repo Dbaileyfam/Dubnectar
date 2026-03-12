@@ -64,6 +64,19 @@ body {
   opacity: 0.22;
 }
 
+/* Media page: illustration overlay behind the smoke */
+.media-bg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background-image: url("../images/media-overlay.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  opacity: 0.22;
+}
+
 /* Smoke in front as bands; center kept clear so logo shines through */
 .smoke-layer {
   position: fixed;
