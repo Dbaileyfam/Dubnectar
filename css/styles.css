@@ -560,17 +560,20 @@ main {
   border-top: 1px solid var(--border);
 }
 
-.contact-info p {
-  margin: 0.5rem 0;
+.contact-info-label {
+  margin: 0 0 1rem;
   color: var(--text-muted);
+  font-size: 0.95rem;
 }
 
-.contact-info a {
-  color: var(--gold);
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.contact-info a:hover {
-  color: var(--pink);
+.contact-info .contact-btn {
+  text-decoration: none;
 }
 
 /* Footer */
