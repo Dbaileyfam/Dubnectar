@@ -467,6 +467,19 @@ main {
   min-height: 352px;
 }
 
+/* Video embed (Videos section) */
+.video-embed-wrap {
+  max-width: 560px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+}
+
+.video-embed-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius);
+}
+
 /* Media grid */
 .media-grid {
   display: grid;
