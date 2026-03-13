@@ -449,6 +449,19 @@ main {
 .event-details .venue {
   color: var(--text-muted);
   font-size: 0.95rem;
+  display: block;
+}
+
+.event-details .venue-link {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--pink);
+  text-underline-offset: 2px;
+}
+
+.event-details .venue-link:hover {
+  color: var(--gold);
 }
 
 .event-actions .btn {
