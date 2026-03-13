@@ -455,6 +455,18 @@ main {
   white-space: nowrap;
 }
 
+/* Spotify embed (Music section) */
+.spotify-embed-wrap {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.spotify-embed {
+  display: block;
+  width: 100%;
+  min-height: 352px;
+}
+
 /* Media grid */
 .media-grid {
   display: grid;
