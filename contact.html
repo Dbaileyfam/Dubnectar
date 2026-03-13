@@ -40,7 +40,8 @@
     <h1 class="page-title">Contact us</h1>
     <p class="page-subtitle">Bookings, press, or just saying hi — we’d love to hear from you.</p>
 
-    <form class="contact-form" action="#" method="post">
+    <form class="contact-form" action="https://formspree.io/f/xojkldbb" method="POST">
+      <input type="hidden" name="_replyto" id="contact-replyto">
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -61,10 +62,9 @@
     </form>
 
     <div class="contact-info">
-      <p><strong>Email:</strong> <a href="mailto:hello@dubnectar.com">hello@dubnectar.com</a></p>
+      <p><strong>Email:</strong> <a href="mailto:booking@801familystudios.com">booking@801familystudios.com</a></p>
       <p><strong>Instagram:</strong> <a href="#" target="_blank" rel="noopener">@dubnectar</a></p>
       <p><strong>Facebook:</strong> <a href="#" target="_blank" rel="noopener">Dubnectar</a></p>
-      <p>Replace the above with your real email and social links.</p>
     </div>
   </main>
 
@@ -78,5 +78,10 @@
     <p>© Dubnectar. All rights reserved.</p>
   </footer>
   <script src="js/smoke.js"></script>
+  <script>
+    document.querySelector('.contact-form').addEventListener('submit', function() {
+      document.getElementById('contact-replyto').value = document.getElementById('email').value;
+    });
+  </script>
 </body>
 </html>

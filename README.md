@@ -23,7 +23,12 @@ python3 -m http.server 8000
 
 1. **Events** — Edit the event items in `events.html` (dates, venues, ticket URLs).
 2. **Media** — In `media.html`, add real track/video titles, embed or link to players, and replace placeholder “Listen” / “Watch” links.
-3. **Contact** — Update the email and social links in `contact.html`. To make the form work, hook it up to a form service (e.g. Formspree, Netlify Forms) or your own backend.
+3. **Contact** — The form is set up to use **Formspree** and send submissions to **booking@801familystudios.com**. To finish setup:
+   - Go to [formspree.io](https://formspree.io) and sign up (free).
+   - Click **New form**, set the form name (e.g. “Dubnectar contact”), and set **Send submissions to** to `booking@801familystudios.com`.
+   - Copy your form ID (the part after `/f/` in the form’s action URL Formspree shows you).
+   - In `contact.html`, find the form and replace `YOUR_FORM_ID` in the `action` attribute with your Formspree form ID (e.g. `action="https://formspree.io/f/abcdexyz"`).
+   - Save, commit, and push. New submissions will be emailed to booking@801familystudios.com.
 4. **Styles** — Colors and fonts are in `css/styles.css` (see `:root` at the top). You can add a favicon by placing `favicon.ico` in the project root and adding `<link rel="icon" href="favicon.ico">` in each page’s `<head>`.
 
 No build step required; everything is plain HTML and CSS.
