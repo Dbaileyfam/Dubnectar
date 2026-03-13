@@ -468,9 +468,15 @@ main {
 }
 
 /* Video embed (Videos section) */
+.section--videos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .video-embed-wrap {
+  width: 100%;
   max-width: 560px;
-  margin: 0 auto;
   aspect-ratio: 16 / 9;
 }
 
