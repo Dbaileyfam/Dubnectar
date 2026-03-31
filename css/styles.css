@@ -155,6 +155,7 @@ img {
   top: 0;
   z-index: 50;
   background: var(--black);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   border-bottom: 2px solid var(--outline);
 }
@@ -341,6 +342,28 @@ main {
   margin: 0 0 1.5rem;
   color: var(--text);
   text-shadow: 0 0 20px var(--nectar-glow);
+}
+
+.epk-copy {
+  max-width: 70ch;
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.epk-facts {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--text-muted);
+}
+
+.epk-facts li + li {
+  margin-top: 0.35rem;
+}
+
+.epk-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 /* Cards grid */
