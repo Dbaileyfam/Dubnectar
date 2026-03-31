@@ -384,16 +384,9 @@ main {
 .epk-artwork img,
 .epk-photo img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.epk-artwork--wide {
-  min-height: 260px;
-}
-
-.epk-artwork--mark {
-  min-height: 260px;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .epk-photo-grid {
@@ -402,8 +395,8 @@ main {
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 }
 
-.epk-photo {
-  aspect-ratio: 4 / 3;
+.epk-downloads {
+  margin-top: 1rem;
 }
 
 /* Cards grid */
