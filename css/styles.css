@@ -366,6 +366,46 @@ main {
   gap: 1rem;
 }
 
+.epk-artwork-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 2fr 1fr;
+}
+
+.epk-artwork,
+.epk-photo {
+  margin: 0;
+  border: 2px solid var(--outline);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-card);
+}
+
+.epk-artwork img,
+.epk-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.epk-artwork--wide {
+  min-height: 260px;
+}
+
+.epk-artwork--mark {
+  min-height: 260px;
+}
+
+.epk-photo-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.epk-photo {
+  aspect-ratio: 4 / 3;
+}
+
 /* Cards grid */
 .cards {
   display: grid;
@@ -704,5 +744,9 @@ main {
   .event-date {
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--border);
+  }
+
+  .epk-artwork-grid {
+    grid-template-columns: 1fr;
   }
 }
